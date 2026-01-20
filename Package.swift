@@ -13,12 +13,12 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/ZipArchive/ZipArchive.git", from: "2.4.0"),
+        .package(url: "https://github.com/ZipArchive/ZipArchive.git", from: "2.1.0"),
         .package(url: "https://github.com/cxa/MenuItemKit.git", from: "3.0.0"),
         .package(url: "https://github.com/zoonooz/ZFDragableModalTransition.git", from: "0.6.0"),
-        .package(url: "https://github.com/tadija/AEXML.git", from: "4.6.0"),
+        .package(url: "https://github.com/tadija/AEXML.git", from: "4.2.0"),
         .package(url: "https://github.com/ArtSabintsev/FontBlaster.git", from: "4.0.0"),
-        .package(url: "https://github.com/fantim/JQSwiftIcon.git", from: "1.1.0"),
+        .package(url: "https://github.com/fantim/JSQWebViewController.git", from: "6.1.0"),
         .package(url: "https://github.com/realm/realm-swift.git", from: "10.0.0")
     ],
     targets: [
@@ -30,12 +30,27 @@ let package = Package(
                 "ZFDragableModalTransition",
                 "AEXML",
                 "FontBlaster",
-                "JQSwiftIcon",
+                "JSQWebViewController",
                 .product(name: "RealmSwift", package: "realm-swift")
             ],
-            path: "FolioReaderKit",
+            path: ".",
+            exclude: [
+                "docs",
+                "Example",
+                "Vendor",
+                "Cartfile",
+                "Cartfile.resolved",
+                "Podfile",
+                "Podfile.lock",
+                "NFolioReaderKit.podspec",
+                "Source/Resources"
+            ],
+            sources: [
+                "FolioReaderKit",
+                "Source"
+            ],
             resources: [
-                .process("Resources")
+                .process("Source/Resources")
             ]
         )
     ]
