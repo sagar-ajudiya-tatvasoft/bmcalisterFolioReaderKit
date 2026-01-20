@@ -34,7 +34,7 @@ class BaseExampleFolioReaderContainer: FolioReaderContainer {
         })
         config.classBasedOnClickListeners.append(listener)
 
-        guard let bookPath = Bundle.main.path(forResource: self.bookTitle, ofType: "epub") else { return }
+        guard let bookPath = Bundle.module.path(forResource: self.bookTitle, ofType: "epub") else { return }
         setupConfig(config, epubPath: bookPath)
     }
 }

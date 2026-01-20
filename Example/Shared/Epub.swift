@@ -35,7 +35,7 @@ enum Epub: Int {
     }
 
     var bookPath: String? {
-        return Bundle.main.path(forResource: self.name, ofType: "epub")
+        return Bundle.module.path(forResource: self.name, ofType: "epub")
     }
 
     var readerIdentifier: String {

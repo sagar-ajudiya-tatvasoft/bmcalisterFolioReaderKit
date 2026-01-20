@@ -18,7 +18,7 @@ class FolioReaderTests: QuickSpec {
             var epubPath: String!
 
             beforeEach {
-                guard let path = Bundle.main.path(forResource: "The Silver Chair", ofType: "epub") else {
+                guard let path = Bundle.module.path(forResource: "The Silver Chair", ofType: "epub") else {
                     fail("Could not read the epub file")
                     return
                 }
